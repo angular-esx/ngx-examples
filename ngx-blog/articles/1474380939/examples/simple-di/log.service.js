@@ -1,13 +1,11 @@
 import * as ngCore from '@angular/core';
 
-function _logService(){
-  this.constructor = function(){
+export var logService = ngCore.Class({
+  constructor: function(){
     this.name = 'logService';
-  };
+  },
 
-  this.setName = function(name){
+  setName: function(name){
     this.name = name;
-  };
-}
-
-export var logService = ngCore.Class(new _logService());
+  }
+});

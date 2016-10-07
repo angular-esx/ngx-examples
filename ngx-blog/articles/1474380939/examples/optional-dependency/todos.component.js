@@ -2,10 +2,6 @@ import * as ngCore from '@angular/core';
 
 import { todoListComponent } from './todoList.component';
 
-function _todosComponent(){
-  this.constructor = function(){};
-}
-
 export var todosComponent = ngCore.Component({
   selector: 'todos',
   template: [
@@ -14,4 +10,6 @@ export var todosComponent = ngCore.Component({
   ].join(''),
   directives: [ todoListComponent ]
 })
-.Class(new _todosComponent());
+.Class({
+  constructor: function(){}
+});

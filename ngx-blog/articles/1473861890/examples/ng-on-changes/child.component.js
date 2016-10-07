@@ -1,13 +1,5 @@
 import * as ngCore from '@angular/core';
 
-function _childComponent (){
-  this.constructor = function childComponent(){};
-
-  this.ngOnChanges = function(changeRecord){
-    console.log(changeRecord);
-  };
-}
-
 export var childComponent = ngCore.Component({
   selector: 'my-child',
   template: [
@@ -16,4 +8,10 @@ export var childComponent = ngCore.Component({
   ].join(''),
   properties: ['title', 'model']
 })
-.Class(new _childComponent());
+.Class({
+  constructor: function(){},
+
+  ngOnChanges: function(changeRecord){
+    console.log(changeRecord);
+  }
+});

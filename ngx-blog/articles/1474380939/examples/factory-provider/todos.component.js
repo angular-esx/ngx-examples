@@ -3,14 +3,6 @@ import * as ngCore from '@angular/core';
 import { userService } from './user.service';
 import { todoListComponent } from './todoList.component';
 
-function _todosComponent(){
-  this.constructor = [userService, function(userService){
-    this.userService = userService;
-    
-    this.userService.setAuth(true);
-  }];
-}
-
 export var todosComponent = ngCore.Component({
   selector: 'todos',
   template: [
@@ -20,4 +12,10 @@ export var todosComponent = ngCore.Component({
   directives: [ todoListComponent ],
   providers: [ userService ]
 })
-.Class(new _todosComponent());
+.Class({
+  constructor: [userService, function(userService){
+    this.userService = userService;
+    
+    this.userService.setAuth(true);
+  }]
+});

@@ -4,10 +4,6 @@ import { logService } from './log.service';
 import { todoTitleComponent } from './todoTitle.component';
 import { todoListComponent } from './todoList.component';
 
-function _todosComponent(){
-  this.constructor = [logService, function(logService){}];
-}
-
 export var todosComponent = ngCore.Component({
   selector: 'todos',
   template: [
@@ -21,4 +17,6 @@ export var todosComponent = ngCore.Component({
   ],
   providers: [ logService ]
 })
-.Class(new _todosComponent());
+.Class({
+  constructor: [logService, function(logService){}]
+});

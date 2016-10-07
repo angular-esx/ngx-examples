@@ -1,17 +1,26 @@
 import * as ngCore from '@angular/core';
 
-function _childComponent (){
-  this.constructor = function childComponent(){
-  };
+export var childComponent = ngCore.Component({
+  selector: 'my-child',
+  template: [
+    '<center>',
+      '<h1>ngDoCheck Example</h1>',
+      'Title: <input [(ngModel)]="model.title" />',
+    '</center>'
+  ].join(''),
+  properties: ['title']
+})
+.Class({
+  constructor: function(){},
 
-  this.ngOnInit = function(){
+  ngOnInit: function(){
     this.model = { };
     this.model.title = this.currentTitle = this.title;
     this.noChangeCount = 0;
     this.changeDetected = null;
-  };
+  },
 
-  this.ngDoCheck = function(){
+  ngDoCheck: function(){
     if (this.model.title !== this.currentTitle) {
       this.changeDetected = true;
       
@@ -27,17 +36,5 @@ function _childComponent (){
     }
 
     this.changeDetected = false;
-  };
-}
-
-export var childComponent = ngCore.Component({
-  selector: 'my-child',
-  template: [
-    '<center>',
-      '<h1>ngDoCheck Example</h1>',
-      'Title: <input [(ngModel)]="model.title" />',
-    '</center>'
-  ].join(''),
-  properties: ['title']
-})
-.Class(new _childComponent());
+  }
+});

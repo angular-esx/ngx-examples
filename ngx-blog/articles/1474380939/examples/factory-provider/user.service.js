@@ -1,11 +1,9 @@
 import * as ngCore from '@angular/core';
 
-function _userService(){
-  this.constructor = function(){};
+export var userService = ngCore.Class({
+  constructor: function(){},
 
-  this.setAuth = function(isAuth){
+  setAuth: function(isAuth){
     this.isAuth = isAuth;
-  };
-}
-
-export var userService = ngCore.Class(new _userService());
+  }
+});
