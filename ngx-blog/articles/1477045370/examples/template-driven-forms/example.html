@@ -1,0 +1,48 @@
+<form #form="ngForm" (ngSubmit)="onSubmit(form.value)">
+  <div ngModelGroup="name">
+    <div>
+      <label>Firstname:</label>
+      <input type="text" name="firstname" 
+        [(ngModel)]="model.firstname"
+        #firstname="ngModel"
+        required
+      >
+    </div>
+    <div class="error-message" [hidden]="firstname.valid || firstname.pristine">
+      Firstname is required
+    </div>
+
+    <div>
+      <label>Lastname:</label>
+      <input type="text" name="lastname" 
+        [(ngModel)]="model.lastname"
+        #lastname="ngModel"
+        required
+      >
+    </div>
+    <div class="error-message" [hidden]="lastname.valid || lastname.pristine">
+      Lastname is required
+    </div>
+  </div>
+
+  <div ngModelGroup="contact">
+    <div>
+      <label>Email:</label>
+      <input type="text" name="email" 
+        [(ngModel)]="model.email"
+        #email="ngModel"
+        required
+      >
+    </div>
+    <div class="error-message" [hidden]="email.valid || email.pristine">
+      Email is required
+    </div>
+
+    <div>
+      <label>Phone:</label>
+      <input type="text" name="phone" [(ngModel)]="model.phone">
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="!form.valid">Submit</button>
+</form>
