@@ -4,9 +4,9 @@ import { CommonModule } from '@angular/common';
 import { exampleComponent } from './example.component';
 
 
-export { exampleComponent as keyframesComponent } from './example.component';
+export { exampleComponent as multiStepAnimationsComponent } from './example.component';
 
-export var keyframesModule = NgModule({
+export var multiStepAnimationModule = NgModule({
   imports: [ CommonModule ],
   declarations: [ 
     exampleComponent

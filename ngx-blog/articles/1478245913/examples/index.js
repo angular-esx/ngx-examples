@@ -14,9 +14,9 @@ export {
 } from './automatic-property-calculation';
 
 export {
-  keyframesComponent,
-  keyframesModule
-} from './keyframes';
+  multiStepAnimationsComponent,
+  multiStepAnimationModule
+} from './multi-step-animations';
 
 export {
   parallelAnimationsComponent,

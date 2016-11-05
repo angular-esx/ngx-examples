@@ -7,7 +7,7 @@ function _fakeApplicationService() {
     return examples.basicTransitionComponent;
     // return examples.enterLeaveTransitionComponent;
     // return examples.autoPropertyCalcComponent;
-    // return examples.keyframesComponent;
+    // return examples.multiStepAnimationsComponent;
     // return examples.parallelAnimationsComponent;
   };
 }
