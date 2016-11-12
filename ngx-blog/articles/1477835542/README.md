@@ -1,1 +1,0 @@
-In order to start the example, just type gulp start.
